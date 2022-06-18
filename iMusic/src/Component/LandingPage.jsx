@@ -37,7 +37,7 @@ export const LandingPage = () => {
 
     setError("");
 
-    if (signupPassword != confirmSignupPassword) {
+    if (signupPassword !== confirmSignupPassword) {
       return setError("passwords didnt match!");
     }
     try {
@@ -48,11 +48,13 @@ export const LandingPage = () => {
       setError("sorry cant make your account");
     }
   };
+
+  console.log(loading);
   return (
     <React.Fragment>
       <div className={landingPage.mainContainer}>
         <div className={landingPage.appName}>
-          <img src={logo} height="80px" />
+          <img src={logo} height="80px" alt="" />
           <hr />
           <div className={landingPage.dots}>...</div>
         </div>

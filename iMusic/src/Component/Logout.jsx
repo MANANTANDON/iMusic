@@ -9,7 +9,7 @@ import "./Logout.css";
 
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { width } from "@mui/system";
+// import { width } from "@mui/system";
 
 export const AlertDialog = () => {
   const [open, setOpen] = React.useState(false);

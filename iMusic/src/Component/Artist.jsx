@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import artistCard from "./Artist.module.scss";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 import { AlertDialog } from "./Logout";
 import playButton from "../images/playButton.png";
-import powerSwitch from "../images/powerButton5.png";
+// import powerSwitch from "../images/powerButton5.png";
 
 export const Artist = (props) => {
   const [searchArtist, setSearchArtist] = useState("");
 
-  const { logout } = useAuth();
   const navigate = useNavigate();
 
   const zip = (a1, a2, a3, a4) => a1.map((x, i) => [x, a2[i], a3[i], a4[i]]);
@@ -57,6 +56,7 @@ export const Artist = (props) => {
                   console.log(val[0], val[1], val[2], val[3]);
                   return val;
                 }
+                return 0;
               })
               .map((artistName, index) => (
                 <div key={index} className={artistCard.artistCard}>
@@ -117,5 +117,5 @@ export const Artist = (props) => {
 
  code=AQDaAVZZ4j2_c6ShLMl9JsQ89PK5-jOlVZUSzROKQVkq9meObL-0oJyWVPA_3AV9_l-s1RJNQYLAkmZQrq6gXdYP_5loeuNHQQOwlwxVqNaJzxcWKxBPu14gJ7FN4YuMLKWPQ2MSW3OlPwgq9-WO-T4YMRrL3K51cSl-93K4AMJ6iuEBD5L-_Yi8ACivR_5UpMd1"
 
- curl -d client_id=219920e764664a3dafb265f5cfc670a8 -d client_secret=c4f7d9f36c8e401ead612876b205f8e4 -d grant_type=authorization_code -d code=AQDEYo8ZSrvIY8n48fylTh59aVkbEyBAD8aqdeEb5tHlB3P9egOGFKfY7fKqeWLM_pscsvDKVgbQJeprXvE2XK0AVwJ34lI8Y5e6W2ur9-tLCaswn6tyQRZXxaNKU5cSrimsrZldvDBx1Qh_C8oq4rlDPnIZBSC4-ge7QjLq7CJ4eYfa0thJhwhePH1wBtGnEv27 -d redirect_uri=https%3A%2F%2Flocalhost%3A3000 https://accounts.spotify.com/api/token
+ curl -d client_id=219920e764664a3dafb265f5cfc670a8 -d client_secret=c4f7d9f36c8e401ead612876b205f8e4 -d grant_type=authorization_code -d code=AQBMs8sFH7hC0of_gWBWPbUntOk1IHOwyZAwpcDWixA3oRiUj_sK5nlx0jVdImlR6QbRIL-5_Jn4Lci_r__fseJ2zFX5QPyJv43l0DDOspWe6dF6QcM4xoXBqT8meosDiCTBAsqEbfcdtu4PeOoULae3M0nKOcNDX8EA4657EM_e7ynvd7CopqRgkoLfxHDTADcn -d redirect_uri=https%3A%2F%2Flocalhost%3A3000 https://accounts.spotify.com/api/token
 */

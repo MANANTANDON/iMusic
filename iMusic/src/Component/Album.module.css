@@ -86,16 +86,22 @@
 
 .albumContainer {
   box-sizing: border-box;
-  margin-top: 20px;
+  margin: 40px 40px -40px 40px;
   color: white;
   display: flex;
-  width: 100%;
-  /* border: 2px solid green; */
-  padding-left: 70px;
-  padding-bottom: 50px;
+  width: fit-content;
+  border: 2px solid green;
+  padding: 30px 0 30px 80px;
   flex-wrap: wrap;
   flex-direction: row;
   column-gap: 100px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(3, 3, 3, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .albumArt {
@@ -151,14 +157,8 @@
   font-size: 15px;
 }
 
-.mirrorBack {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(3, 3, 3, 0.3);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  margin: 40px;
-  margin-bottom: 40px;
+@media screen and (max-width: 1361px) {
+  .albumContainer {
+    padding-left: 40px;
+  }
 }

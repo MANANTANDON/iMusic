@@ -11,11 +11,11 @@ import { PrivateRoute } from "./privateRoute/PrivateRoute";
 const App = () => {
   const data = {
     access_token:
-      "BQC47la1mQeZv0-i127CPWWkwCQxLh6wyMv7CFn7_A8PpA-1m0uBCyW7VKcAWizSfRnEKIwHRR0oc4HWJF-bLz3A6VDIO30EbR6w27_FmHDEASDZUtHD-L4ZwyAZWfBo3LAVOEjVhAwZhSmuUIf542rRRCeqRdXVuYHfSZ0blYKE_fnh88hAV4aWJRi2Li5aVCrzRi35KlQzR3glWOsLSxNs5nJmWDRU8XOpvyjWv4E",
+      "BQBNDmlM1FeLvVcFiK9xygAYFHVfVtkBoufnUqnQU6mbt5-I2cn5tEMnzBeGERK5VdPLch1c1OJCBsjheXmb4fBE8H1TnKn7Go7W8Us3Xq4FMC4YaWBrnUd3a0iOqfAa5n20KVC642zFnkYMcTqm7m-U_ZW22kS4smNED993ptIwmFt78vDxQPAnOTrSC4oLDai35Lr6SaDLhuVTZyP4MEmrgb9P0kGa40DdP8or5oo",
     token_type: "Bearer",
     expires_in: 3600,
     refresh_token:
-      "AQDptI_xahngr4_UKIrNoEc8V8GFtBb1VndgSK4g2_NPEX4AWUYaZFUqHcc2VFxVVwSvqvmEuNbl3tEYKADjeFD0MFwASqONOUNbOdYrECC1P_dNdJK9K5379iplXVpAz9E",
+      "AQCfQ-NIhhXDCk6ndh9Oz5eQYJRTjBpVInZhr1XVzQrIvToxkITXw_1Eup5XDoFyogWMLxgLfvrurUl5qNzBVkRLfLlbteG2p03H2ULDpf9gO95k6iPxrNuSJ59hdC8_Bhc",
     scope: "playlist-modify-private",
   };
 
