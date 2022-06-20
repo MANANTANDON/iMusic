@@ -117,5 +117,5 @@ export const Artist = (props) => {
 
  code=AQDaAVZZ4j2_c6ShLMl9JsQ89PK5-jOlVZUSzROKQVkq9meObL-0oJyWVPA_3AV9_l-s1RJNQYLAkmZQrq6gXdYP_5loeuNHQQOwlwxVqNaJzxcWKxBPu14gJ7FN4YuMLKWPQ2MSW3OlPwgq9-WO-T4YMRrL3K51cSl-93K4AMJ6iuEBD5L-_Yi8ACivR_5UpMd1"
 
- curl -d client_id=219920e764664a3dafb265f5cfc670a8 -d client_secret=c4f7d9f36c8e401ead612876b205f8e4 -d grant_type=authorization_code -d code=AQBMs8sFH7hC0of_gWBWPbUntOk1IHOwyZAwpcDWixA3oRiUj_sK5nlx0jVdImlR6QbRIL-5_Jn4Lci_r__fseJ2zFX5QPyJv43l0DDOspWe6dF6QcM4xoXBqT8meosDiCTBAsqEbfcdtu4PeOoULae3M0nKOcNDX8EA4657EM_e7ynvd7CopqRgkoLfxHDTADcn -d redirect_uri=https%3A%2F%2Flocalhost%3A3000 https://accounts.spotify.com/api/token
+ curl -d client_id=219920e764664a3dafb265f5cfc670a8 -d client_secret=c4f7d9f36c8e401ead612876b205f8e4 -d grant_type=authorization_code -d code=AQD7cPBE7T2v4c8ysdwxI0zmTOTV9LqsP4O2_tndh9oRxKT-VBfKZJXJUhudL0UwcuHhn6ZF5VeXo1qdjFFX00jbwIxDvK25_BfHXCpyUzC-TW6qYkMXKDvIYCFLvKq-kVx7YUDclfvLMADf3UrYo2-czaOXjPgFS6XargO0t7fEFtgSiBWLGiicCyLoxN7OAD3X -d redirect_uri=https%3A%2F%2Flocalhost%3A3000 https://accounts.spotify.com/api/token
 */
