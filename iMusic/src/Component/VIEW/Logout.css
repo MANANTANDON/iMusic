@@ -1,0 +1,12 @@
+.textFont {
+  font-size: 20px;
+  font-weight: 350;
+  color: black;
+}
+
+.textDeco {
+  margin: 0 5px 0 5px;
+  background: linear-gradient(to left, #f64f59, #c471ed, #12c2e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

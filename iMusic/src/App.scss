@@ -1,9 +1,13 @@
 body {
-  background-image: url("./images/background3.jpg");
+  background-image: url("./images/backgroundDark.jpg");
   height: 100px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Open Sans";
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

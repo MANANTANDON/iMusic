@@ -18,14 +18,11 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  const signup = async (email, password) => {
+  const signup = async (email, password, fname) => {
     return createUserWithEmailAndPassword(auth, email, password).then(
       (cred) => {
-        // const fileref = ref(storage, cred.user.uid + "/profile.png");
-        // uploadBytes(fileref, userPhoto);
-
         setDoc(doc(db, "users", cred.user.uid), {
-          pass: password,
+          userName: fname,
           useremail: email,
         });
       }

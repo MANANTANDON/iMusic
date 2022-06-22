@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Artist } from "./Component/Artist";
-import { Albums } from "./Component/Albums";
-import { Tracks } from "./Component/Tracks";
-import { LandingPage } from "./Component/LandingPage";
+import { Artist } from "./Component/MODEL/Artist";
+import { Albums } from "./Component/MODEL/Albums";
+import { Tracks } from "./Component/MODEL/Tracks";
+import { LandingPage } from "./Component/MODEL/LandingPage";
 import { AuthProvider } from "./context/AuthContext";
 import { PrivateRoute } from "./privateRoute/PrivateRoute";
 
 const App = () => {
   const data = {
     access_token:
-      "BQCcByoWbJ-q_YXfvUBXH7XFfQ-TH0hxf1vcD2BQHD5ONfuNG1DFHpNAEJFTslaljNFYr1rn8QWmGxfDdRXfZQNvRhqRXrasv6R9n6AK-Mj5hMCV6iGbv7Z3RG1--c-1Ea-ztEulvbtPIEj6PZVgBEEXntv18GCsSKcTferVPpnu-t6tkwtcNC9CJ4xV5XrYAG8z96RSY6vYYQ2Gjp2m4FJZ9637e5V0PQxpACpLr28",
+      "BQCrUdweMkpMIbK1x2saJu6HGUFdazD_ZzMRI-bqfuSgXamEZsnc3yr5OPP8qNm8ryrZKRrVXan5RDUhq6peuJA-9xe-nhhalGlPX86PYQWW8WggCUjfyDk5GTXlwS64TpGsOe1wUA5hoPvzDiz-eg4PrirkeJVF8Dx7VZk47uSgzqkJMaaVp6AOB7RSNkEYkkXdmJWzfnRiZnuzVT9dbyANA1HdeCQ19v_LPaGiiw",
     token_type: "Bearer",
     expires_in: 3600,
     refresh_token:
-      "AQB8Pj1I3HjH1PDycVVgtQh8nV5HO6sGNA_Lnz3UPzJl4wIeWeylVJM36l7w2dBS7X3RJpfhjF5ON0ne4NC0_LwPUpHB0cdtRS810jAR4VGWSkyPIcSmPOzjSnXPZWS2iHA",
+      "AQBZC9Mhl3hE76l5loTgGNJpHzH0DVC-2Qcqd4gQwPb6ZX-PO1dKnjxJEKAHzxmfVkVcvlALxuCuGoh7SpUIXFpSWUYTAoK-NDskPNBB74yHQv8u53s4FiUSFLWQc6m5jjM",
     scope: "playlist-modify-private",
   };
 
@@ -37,6 +37,8 @@ const App = () => {
   const [previewSong, setPreviewSong] = useState([]);
   const [albumArt, setAlbumArt] = useState([]);
   const [copyright, setCopyright] = useState([]);
+
+  const [topTracks, setTopTracks] = useState([{}]);
 
   const artistId = [
     "3TVXtAsR1Inumwj472S9r4",
@@ -70,21 +72,28 @@ const App = () => {
     "0QHgL1lAIqAw0HtD7YldmP",
     "4fxd5Ee7UefO4CUXgwJ7IP",
     "6LuN9FCkKOj5PcnpouEgny",
+    "4MCBfE4596Uoi2O4DtmEMz",
     "6qqNVTkY8uBg9cP3Jd7DAH",
     "3fMbdgg4jU18AjLCKBhRSm",
+    "15UsOTVnJzReFVN1VCnxy4",
     "2tIP7SsRs7vjIcLrU85W8J",
     "6l3HvQ5sa6mXTsMTB19rO5",
     "6KImCVD70vtIoJWnq6nGn3",
     "6vXTefBL93Dj5IqAWq6OTv",
     "4q3ewBCX7sLwd24euuV69X",
     "4Uc8Dsxct0oMqx0P6i60ea",
+    "0du5cEVh5yTK9QJze8zA0C",
     "7jVv8c5Fj3E9VhNjxT4snq",
-  ];
-
-  const weekndsAlbums = [
-    "6F87lH0I09qlrzvCCKc7lz",
-    "7zCODUHkfuRxsUjtuzNqbd",
-    "04hy4jb1GDD00otiwzsFUB",
+    "540vIaP2JwjQb9dm3aArA4",
+    "7c0XG5cIJTrrAgEC3ULPiq",
+    "0z4gvV4rjIZ9wHck67ucSV",
+    "7qG3b048QCHVRO5Pv1T5lw",
+    "2HPaUgqeutzr3jx5a9WyDV",
+    "0bdfiayQAKewqEvaU6rXCv",
+    "6XyY86QOPPrYVGvF9ch6wz",
+    "5rSXSAkZ67PYJSvpUpkOr7",
+    "53XhwfbYqKCa1cC15pYq2q",
+    "3jK9MiCrA42lLAdMGUZpwa",
   ];
 
   useEffect(() => {
@@ -112,35 +121,7 @@ const App = () => {
     setAlbumId([]);
     setAlbums([{}]);
     setArtistDetails({});
-
-    //only for weeknd....
-    if (albumId === "1Xyo4u8uXC1ZmMpatF05PJ") {
-      for (let i = 0; i < weekndsAlbums.length; i++) {
-        fetch(`https://api.spotify.com/v1/albums/${weekndsAlbums[i]}`, {
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${data.access_token}`,
-            "Content-Type": "application/json",
-          },
-        })
-          .then((response) => response.json())
-          .then((response) => {
-            console.log(response);
-            setAlbums((old) => [
-              ...old,
-              {
-                albumTitle: response.name,
-                albumImage: response.images[0].url,
-                releaseDate: response.release_date,
-                noOfTracks: response.total_tracks,
-              },
-            ]);
-
-            setAlbumId((old) => [...old, response.id]);
-          })
-          .catch((error) => console.log(error));
-      }
-    }
+    setTopTracks([{}]);
 
     //all the albumsss.......
     fetch(`https://api.spotify.com/v1/artists/${albumId}/albums`, {
@@ -172,6 +153,35 @@ const App = () => {
         }
       })
       .catch((error) => console.log(error));
+
+    fetch(
+      `https://api.spotify.com/v1/artists/${albumId}/top-tracks?market=ES`,
+      {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${data.access_token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        for (let i = 0; i < 5; i++) {
+          console.log(response.tracks[i].preview_url);
+          setTopTracks((old) => [
+            ...old,
+            {
+              name: response.tracks[i].name,
+              duration: millisToMinutesAndSeconds(
+                response.tracks[i].duration_ms
+              ),
+              image: response.tracks[i].album.images[0].url,
+              preview: response.tracks[i].preview_url,
+            },
+          ]);
+        }
+      });
 
     setArtistDetails({
       imageUrl: imgUrl,
@@ -206,21 +216,19 @@ const App = () => {
         setAlbumName(response.name);
         setNoOfTracks(response.total_tracks);
         var total = 0;
-        // setCopyright(response.copyrights[0].text);
+
         for (let i = 0; i < response.tracks.items.length; i++) {
           total += response.tracks.items[i].duration_ms;
           setPreviewSong((old) => [
             ...old,
             response.tracks.items[i].preview_url,
           ]);
+
           setSongs((old) => [...old, response.tracks.items[i].name]);
           setSongsLength((old) => [
             ...old,
             millisToMinutesAndSeconds(response.tracks.items[i].duration_ms),
           ]);
-          // console.log(
-          //   millisToMinutesAndSeconds(response.tracks.items[i].duration_ms)
-          // )
         }
         setTotalAlbumLength(msToTime(total));
       })
@@ -273,6 +281,7 @@ const App = () => {
                     artistAlbum={albums}
                     songsId={albumId}
                     details={artistDetails}
+                    toptracks={topTracks}
                     sendDataToApp={getDataFromAlbums}
                   />
                 }

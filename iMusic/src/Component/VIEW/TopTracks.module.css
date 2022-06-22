@@ -1,0 +1,66 @@
+.text {
+  box-sizing: border-box;
+  /* border: 2px solid orange; */
+  font-size: 60px;
+  font-weight: 900;
+  color: white;
+}
+
+.text:hover {
+  text-decoration: underline;
+}
+
+.topTrackContainter {
+  box-sizing: border-box;
+  /* border: 2px solid green; */
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: lightgrey;
+}
+
+.topTrackRow {
+  box-sizing: border-box;
+  /* border: 2px solid blue; */
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+}
+
+.topTrackRow:hover {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background-color: rgba(3, 3, 3, 0.08);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.topTrackRow img {
+  border-radius: 5px;
+}
+.topTrackRow audio {
+  box-sizing: border-box;
+  height: 35px;
+  width: 250px;
+  margin-top: 30px;
+}
+
+.trackName {
+  box-sizing: border-box;
+  /* border: 2px solid yellowgreen; */
+  width: 500px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 30px;
+}
+
+.trackDuration {
+  box-sizing: border-box;
+  /* border: 2px solid lightskyblue; */
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  width: 200px;
+}
